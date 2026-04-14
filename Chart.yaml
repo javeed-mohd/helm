@@ -1,6 +1,6 @@
 # Chart -> Group of Manifest files
-apiVersion: v2      # K8s related
+apiVersion: v2      # K8s Helm related
 name: nginx
 version: 0.0.1      # This is Chart version
-appVersion: latest  # This is application version like catalogue version
+appVersion: latest  # This is application version
 description: "Upgrading to latest"
