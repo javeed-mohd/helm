@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # These labels are replicaset labels reference
+  labels:
+    project: roboshop
+    purpose: replicaset-demo
+    tier: frontend
+    component: frontend
+  annotations:
+    kubernetes.io/change-cause: {{ .Values.deployment.changeCause }}    # It will be used in 'kubectl rollout history'
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+  # Using these labels, replicaset selects the pod.
+    matchLabels:
+      project: roboshop
+      purpose: replicaset-demo
+      tier: frontend
+      component: frontend
+  # This is Pod definition, Pod is subset of replicaset
+  template:
+    metadata:
+      # These MUST match the 'selector' labels specified above
+      labels:
+        project: roboshop
+        purpose: replicaset-demo
+        tier: frontend
+        component: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:{{ .Values.deployment.imageVersion }}

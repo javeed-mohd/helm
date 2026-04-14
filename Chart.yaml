@@ -1,0 +1,5 @@
+# Chart -> Group of Manifest files
+apiVersion: v2      # K8s related
+name: nginx
+version: 0.0.1      # This is Chart version
+appVersion: latest  # This is application version like catalogue version
