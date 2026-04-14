@@ -5,9 +5,7 @@ metadata:
   # These labels are replicaset labels reference
   labels:
     project: roboshop
-    purpose: replicaset-demo
-    tier: frontend
-    component: frontend
+    purpose: helm-demo
   annotations:
     kubernetes.io/change-cause: {{ .Values.deployment.changeCause }}    # It will be used in 'kubectl rollout history'
 spec:
@@ -16,18 +14,14 @@ spec:
   # Using these labels, replicaset selects the pod.
     matchLabels:
       project: roboshop
-      purpose: replicaset-demo
-      tier: frontend
-      component: frontend
+      purpose: helm-demo
   # This is Pod definition, Pod is subset of replicaset
   template:
     metadata:
       # These MUST match the 'selector' labels specified above
       labels:
         project: roboshop
-        purpose: replicaset-demo
-        tier: frontend
-        component: frontend
+        purpose: helm-demo
     spec:
       containers:
       - name: nginx
