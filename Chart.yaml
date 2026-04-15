@@ -1,6 +1,6 @@
 # Chart -> Group of Manifest files
 apiVersion: v2      # K8s Helm related
 name: nginx
-version: 0.0.2      # This is Chart version
-appVersion: 1.29.8  # This is application version
-description: "Upgrading nginx to 1.29.8"
+version: 0.0.3      # This is Chart version
+appVersion: 1.29-trixie  # This is application version
+description: "Upgrading nginx to 1.29-trixie"
